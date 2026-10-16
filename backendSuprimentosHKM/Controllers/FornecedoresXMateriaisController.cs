@@ -51,55 +51,55 @@ public class FornecedoresXMateriaisController(AppDbContext context, IFornecedore
         }
     }
 
-    [HttpPost]
-    [Consumes("multipart/form-data")]
-    [ProducesResponseType(typeof(ResultadoImportacaoDto), StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> Importar(
-    [FromForm] IFormFile? arquivo,
-    CancellationToken cancellationToken)
-    {
-        if (arquivo is null || arquivo.Length == 0)
-        {
-            return BadRequest(new
-            {
-                mensagem = "Envie um arquivo Excel válido."
-            });
-        }
+    //[HttpPost]
+    //[Consumes("multipart/form-data")]
+    //[ProducesResponseType(typeof(ResultadoImportacaoDto), StatusCodes.Status200OK)]
+    //[ProducesResponseType(StatusCodes.Status400BadRequest)]
+    //public async Task<IActionResult> Importar(
+    //[FromForm] IFormFile? arquivo,
+    //CancellationToken cancellationToken)
+    //{
+    //    if (arquivo is null || arquivo.Length == 0)
+    //    {
+    //        return BadRequest(new
+    //        {
+    //            mensagem = "Envie um arquivo Excel válido."
+    //        });
+    //    }
 
-        if (!string.Equals(
-                Path.GetExtension(arquivo.FileName),
-                ".xlsx",
-                StringComparison.OrdinalIgnoreCase))
-        {
-            return BadRequest(new
-            {
-                mensagem = "Apenas arquivos .xlsx são aceitos."
-            });
-        }
+    //    if (!string.Equals(
+    //            Path.GetExtension(arquivo.FileName),
+    //            ".xlsx",
+    //            StringComparison.OrdinalIgnoreCase))
+    //    {
+    //        return BadRequest(new
+    //        {
+    //            mensagem = "Apenas arquivos .xlsx são aceitos."
+    //        });
+    //    }
 
-        try
-        {
-            await using var stream = arquivo.OpenReadStream();
+    //    try
+    //    {
+    //        await using var stream = arquivo.OpenReadStream();
 
-            var resultado = await _service.ImportarAsync(
-                stream, cancellationToken);
+    //        var resultado = await _service.ImportarAsync(
+    //            stream, cancellationToken);
 
-            return Ok(resultado);
-        }
-        catch (InvalidDataException ex)
-        {
-            return BadRequest(new
-            {
-                mensagem = ex.Message
-            });
-        }
-        catch (IOException)
-        {
-            return BadRequest(new
-            {
-                mensagem = "Não foi possível ler o arquivo enviado."
-            });
-        }
-    }
+    //        return Ok(resultado);
+    //    }
+    //    catch (InvalidDataException ex)
+    //    {
+    //        return BadRequest(new
+    //        {
+    //            mensagem = ex.Message
+    //        });
+    //    }
+    //    catch (IOException)
+    //    {
+    //        return BadRequest(new
+    //        {
+    //            mensagem = "Não foi possível ler o arquivo enviado."
+    //        });
+    //    }
+    //}
 }
