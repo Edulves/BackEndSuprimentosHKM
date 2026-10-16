@@ -1,0 +1,117 @@
+
+# ==========================================
+# .NET / C# - Build
+# ==========================================
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa]rm/
+[Aa]rm64/
+bld/
+artifacts/
+publish/
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# ==========================================
+# Visual Studio
+# ==========================================
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.rsuser
+*.sln.ide
+
+# ==========================================
+# Configurações e segredos
+# ==========================================
+appsettings.Development.json
+appsettings.*.Development.json
+.env
+.env.*
+!.env.example
+!.env.template
+secrets.json
+*.pfx
+*.p12
+*.publishsettings
+*.pubxml.user
+
+# Certificados e chaves privadas
+*.key
+*.pem
+*.cer
+*.crt
+
+# ==========================================
+# Logs e arquivos temporários
+# ==========================================
+*.log
+[Ll]og/
+[Ll]ogs/
+*.tmp
+*.temp
+*.bak
+*.old
+~$*
+
+# ==========================================
+# NuGet
+# ==========================================
+*.nupkg
+*.snupkg
+**/packages/*
+!**/packages/build/
+
+# ==========================================
+# Entity Framework / Banco de dados
+# ==========================================
+# Arquivos de banco locais
+*.mdf
+*.ldf
+*.ndf
+*.db
+*.sqlite
+*.sqlite3
+
+# NÃO ignorar migrations do EF Core.
+# Elas devem ser versionadas no Git.
+
+# ==========================================
+# Cobertura de testes e profiling
+# ==========================================
+coverage/
+coverage*.json
+coverage*.xml
+coverage*.info
+*.coverage
+*.coveragexml
+BenchmarkDotNet.Artifacts/
+
+# ==========================================
+# IDEs e ferramentas
+# ==========================================
+.idea/
+_ReSharper*/
+*.DotSettings.user
+.vscode/
+!.vscode/extensions.json
+
+# ==========================================
+# Sistema operacional
+# ==========================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ==========================================
+# Docker e arquivos locais
+# ==========================================
+docker-compose.override.yml

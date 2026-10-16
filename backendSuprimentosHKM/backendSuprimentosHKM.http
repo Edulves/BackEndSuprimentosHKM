@@ -1,0 +1,6 @@
+@backendSuprimentosHKM_HostAddress = http://localhost:5148
+
+GET {{backendSuprimentosHKM_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
